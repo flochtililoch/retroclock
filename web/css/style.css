@@ -3,7 +3,7 @@
 .clock
 {
   width:200px;
-  margin:200px auto;
+  margin:50px auto;
   text-align:center;
   position:relative;
 }
@@ -17,12 +17,6 @@
   color: white;
   display: inline-block;
   -webkit-box-reflect: below 5px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.3)), color-stop(0.6, transparent), to(transparent));
-  visibility:hidden;
-}
-
-.digit.active
-{
-  visibility:visible;
 }
 
 .digit .top, .digit .bottom
@@ -31,6 +25,7 @@
   left:0;
   right:0;
   overflow: hidden;
+  visibility:hidden;
   -webkit-transition-delay: 2.4s;
 }
 
@@ -51,6 +46,8 @@
   -webkit-transform: rotateX(0deg);
   -webkit-transition: all 0.4s ease;
   -webkit-transform-origin: 50% 100%;
+  
+  visibility:hidden;
 }
 
 .digit .bottom
@@ -73,15 +70,15 @@
   -webkit-transform: perspective(500px) rotateX(90deg);
 }
 
-.unflipped.d1{ z-index:9; visibility:visible}
-.unflipped.d2{ z-index:8; }
-.unflipped.d3{ z-index:7; }
-.unflipped.d4{ z-index:6; }
-.unflipped.d5{ z-index:5; }
-.unflipped.d6{ z-index:4; }
-.unflipped.d7{ z-index:3; }
-.unflipped.d8{ z-index:2; }
-.unflipped.d9{ z-index:1; }
+.unflipped.d1 .top, .unflipped.d1 .bottom{ z-index:9; }
+.unflipped.d2 .top, .unflipped.d2 .bottom{ z-index:8; }
+.unflipped.d3 .top, .unflipped.d3 .bottom{ z-index:7; }
+.unflipped.d4 .top, .unflipped.d4 .bottom{ z-index:6; }
+.unflipped.d5 .top, .unflipped.d5 .bottom{ z-index:5; }
+.unflipped.d6 .top, .unflipped.d6 .bottom{ z-index:4; }
+.unflipped.d7 .top, .unflipped.d7 .bottom{ z-index:3; }
+.unflipped.d8 .top, .unflipped.d8 .bottom{ z-index:2; }
+.unflipped.d9 .top, .unflipped.d9 .bottom{ z-index:1; }
 
 .digit.flip .top
 {
@@ -95,23 +92,24 @@
   -webkit-transform: perspective(500px) rotateX(90deg);
 }
 
-.digit.flip + .digit
+.digit.flip + .digit .top, .digit.flip + .digit .bottom
 {
-  visibility:visible;
+  
 }
 
 .digit.flip + .digit .top
 {
-  -webkit-transition:all 0s ease;
-  -webkit-transform: rotateX(0);
+  -webkit-transition: visibility 0.4s ease;
+  visibility:visible;
 }
 
 .digit.flip + .digit .bottom
 {
   -webkit-transition-delay: .4s;
   -webkit-transform: perspective(500px) rotateX(0);
+  z-index:10;
+  visibility:visible;
 }
 
-
-
-
+.unflipped.d1 .top, .unflipped.d1 .bottom{ visibility:visible; }
+.unflipped.d1 .bottom{ -webkit-transform: rotateX(0) }

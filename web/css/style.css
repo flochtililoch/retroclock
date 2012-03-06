@@ -1,10 +1,17 @@
+h1, p
+{
+  text-align: center;
+}
+
 .clock
 {
-  width: 5em;
+  width: 12em;
   margin: 5em auto;
   text-align: center;
   position: relative;
   height: 15em;
+  -webkit-box-reflect: below .5em -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.3)), color-stop(0.6, transparent), to(transparent));
+  cursor: default;
 }
 
 .clock span
@@ -17,7 +24,6 @@
   color: white;
   overflow: hidden;
   -webkit-transition-delay: 2.4s;
-  /*-webkit-box-reflect: below 5px -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,0.3)), color-stop(0.6, transparent), to(transparent));*/
 }
 
 .clock .top
@@ -35,7 +41,7 @@
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.28, rgb(63,63,63)), color-stop(0.78, rgb(40,40,40)));
   -webkit-box-shadow: inset 0.004em 0.02em 0.04em 0.004em rgba(255, 255, 255, 0.5);
   -webkit-transform: rotateX(0deg);
-  -webkit-transition: all 0.5s ease;
+  -webkit-transition: -webkit-transform 0.25s ease;
   -webkit-transform-origin: 50% 100%;
 }
 
@@ -54,13 +60,13 @@
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.28, rgb(39,39,39)), color-stop(0.78, rgb(23,23,23)));
   -webkit-box-shadow: inset 0.004em -0.02em 0.04em 0.004em rgba(255, 255, 255, 0.5);
   -webkit-transform: rotateX(0deg);
-  -webkit-transition: all 0.5s ease;
+  -webkit-transition: -webkit-transform 0.25s ease;
   -webkit-transform-origin: 50% 0;
   -webkit-transform: perspective(500px) rotateX(90deg);
 }
 
-.d1.top{ z-index:9; }
-.d2.top{ z-index:8; }
+.d1.top, .d1.bottom{ z-index:9; }
+.d2.top, .d2.bottom{ z-index:8; }
 .d3.top{ z-index:7; }
 .d4.top{ z-index:6; }
 .d5.top{ z-index:5; }
@@ -83,20 +89,20 @@
 .d1.bottom{ -webkit-transform: rotateX(0) }
 
 .clock .d1.top{ -webkit-transition-delay: 1s; }
-.clock .d1.bottom{ -webkit-transition-delay: 0.5s; }
+.clock .d1.bottom{ -webkit-transition-delay: 0.25s; }
 .clock .d2.top{ -webkit-transition-delay: 2s; }
-.clock .d2.bottom{ -webkit-transition-delay: 1.5s; }
+.clock .d2.bottom{ -webkit-transition-delay: 1.25s; }
 .clock .d3.top{ -webkit-transition-delay: 3s; }
-.clock .d3.bottom{ -webkit-transition-delay: 2.5s;}
+.clock .d3.bottom{ -webkit-transition-delay: 2.25s;}
 .clock .d4.top{ -webkit-transition-delay: 4s; }
-.clock .d4.bottom{ -webkit-transition-delay: 3.5s; }
+.clock .d4.bottom{ -webkit-transition-delay: 3.25s; }
 .clock .d5.top{ -webkit-transition-delay: 5s; }
-.clock .d5.bottom{ -webkit-transition-delay: 4.5s; }
+.clock .d5.bottom{ -webkit-transition-delay: 4.25s; }
 .clock .d6.top{ -webkit-transition-delay: 6s; }
-.clock .d6.bottom{ -webkit-transition-delay: 5.5s; }
+.clock .d6.bottom{ -webkit-transition-delay: 5.25s; }
 .clock .d7.top{ -webkit-transition-delay: 7s; }
-.clock .d7.bottom{ -webkit-transition-delay: 6.5s; }
+.clock .d7.bottom{ -webkit-transition-delay: 6.25s; }
 .clock .d8.top{ -webkit-transition-delay: 8s; }
-.clock .d8.bottom{ -webkit-transition-delay: 7.5s; }
+.clock .d8.bottom{ -webkit-transition-delay: 7.25s; }
 .clock .d9.top{ -webkit-transition-delay: 9s; }
-.clock .d9.bottom{ -webkit-transition-delay: 8.5s; }
+.clock .d9.bottom{ -webkit-transition-delay: 8.25s; }
